@@ -1,8 +1,8 @@
-import React,{useContext, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
-import {Dropdown} from 'react-bootstrap';
+import { Card, Dropdown, Table } from 'react-bootstrap';
 
 
 //Images
@@ -15,11 +15,15 @@ import pic6 from './../../../images/profile/small/pic6.jpg';
 import pic8 from './../../../images/profile/small/pic8.jpg';
 import wind from './../../../images/big-wind.png';
 import hunt from './../../../images/circle-hunt.png';
+import avatar1 from "../../../images/avatar/1.jpg";
+import avatar2 from "../../../images/avatar/2.jpg";
+import avatar3 from "../../../images/avatar/3.jpg";
 
 //Import Components
 import { ThemeContext } from "../../../context/ThemeContext";
 import ProjectStatisticsTab from './Dashboard/ProjectStatisticsTab';
 import ProfileSlider from './Dashboard/ProfileSlider';
+import UserList from './UserList';
 const CompletionApexChart = loadable(() =>
 	pMinDelay(import("./Dashboard/CompletionApexChart"), 1000)
 );
@@ -40,21 +44,21 @@ const EmailChartApex = loadable(() =>
 );
 
 
-const MessagesBlog  = [
-	{images: pic8, title: 'Maren Rosser', para: 'Hei, dont forget to clear server cache!', datetime:'25min ago' },
-	{images: pic5, title: 'Kaiya Bergson', para: 'I remember that project due is tomorrow.', datetime:'Yesterday, 8:24 AM' },
-	{images: pic6, title: 'Ruben Press', para: 'Ok sir. I will fix it as soon as possible', datetime:'December 12th, 2020 10:24 AM' },
-	{images: pic3, title: 'Cristofer Torff', para: 'Maybe we should schedule that meeting', datetime:'December 12th, 2020 10:24 AM' },
-	{images: pic4, title: 'Ann Rosser', para: 'I dont’t know where that files saved dude.', datetime:'Yesterday, 8:24 AM' },
+const MessagesBlog = [
+	{ images: pic8, title: 'Maren Rosser', para: 'Hei, dont forget to clear server cache!', datetime: '25min ago' },
+	{ images: pic5, title: 'Kaiya Bergson', para: 'I remember that project due is tomorrow.', datetime: 'Yesterday, 8:24 AM' },
+	{ images: pic6, title: 'Ruben Press', para: 'Ok sir. I will fix it as soon as possible', datetime: 'December 12th, 2020 10:24 AM' },
+	{ images: pic3, title: 'Cristofer Torff', para: 'Maybe we should schedule that meeting', datetime: 'December 12th, 2020 10:24 AM' },
+	{ images: pic4, title: 'Ann Rosser', para: 'I dont’t know where that files saved dude.', datetime: 'Yesterday, 8:24 AM' },
 ];
 
-const Home = () => {	
+const Home = () => {
 	const { changeBackground } = useContext(ThemeContext);
 	useEffect(() => {
 		changeBackground({ value: "light", label: "Light" });
 	}, []);
-	
-	return(
+
+	return (
 		<>
 			<div className="row">
 				<div className="col-xl-12">
@@ -75,13 +79,13 @@ const Home = () => {
 										</div>
 									</div>
 								</div>
-								
-								
+
+
 								<div className="col-xl-12">
-									<ProjectStatisticsTab />
+									{/* <ProjectStatisticsTab /> */}
 								</div>
 								<div className="col-xl-12">
-									<div className="card">
+									{/* <div className="card">
 										<div className="card-header border-0 pb-0">
 											<h4 className="fs-20 font-w700 mb-0">Completion Project Rate</h4>
 											<Dropdown className="dropdown ms-2">
@@ -103,9 +107,9 @@ const Home = () => {
 												<CompletionApexChart />
 											</div>
 										</div>
-									</div>
+									</div> */}
 								</div>
-								<div className="col-xl-12">
+								{/* <div className="col-xl-12">
 									<div className="card">
 										<div className="card-header border-0">
 											<div>
@@ -192,10 +196,10 @@ const Home = () => {
 											</div>
 										</div>
 									</div>
-								</div>
-								
-							</div>	
-						</div>	
+								</div> */}
+
+							</div>
+						</div>
 						<div className="col-xl-6">
 							<div className="row">
 								<div className="col-xl-12">
@@ -204,12 +208,12 @@ const Home = () => {
 											<div className="card">
 												<div className="card-body d-flex px-4 pb-0 justify-content-between">
 													<div>
-														<h4 className="fs-18 font-w600 mb-4 text-nowrap">Total Clients</h4>
+														<h4 className="fs-18 font-w600 mb-4 text-nowrap">Total Revenue</h4>
 														<div className="d-flex align-items-center">
 															<h2 className="fs-32 font-w700 mb-0">68</h2>
 															<span className="d-block ms-4">
 																<svg width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-																	<path d="M1.49217 11C0.590508 11 0.149368 9.9006 0.800944 9.27736L9.80878 0.66117C10.1954 0.29136 10.8046 0.291359 11.1912 0.661169L20.1991 9.27736C20.8506 9.9006 20.4095 11 19.5078 11H1.49217Z" fill="#09BD3C"/>
+																	<path d="M1.49217 11C0.590508 11 0.149368 9.9006 0.800944 9.27736L9.80878 0.66117C10.1954 0.29136 10.8046 0.291359 11.1912 0.661169L20.1991 9.27736C20.8506 9.9006 20.4095 11 19.5078 11H1.49217Z" fill="#09BD3C" />
 																</svg>
 																<small className="d-block fs-16 font-w400 text-success">+0,5%</small>
 															</span>
@@ -221,14 +225,14 @@ const Home = () => {
 												</div>
 											</div>
 										</div>
-										
+
 										<div className="col-xl-6 col-sm-6">
 											<div className="card">
 												<div className="card-body px-4 pb-0">
-													<h4 className="fs-18 font-w600 mb-5 text-nowrap">Total Clients</h4>
+													<h4 className="fs-18 font-w600 mb-5 text-nowrap">Todays Sale</h4>
 													<div className="progress default-progress">
-														<div className="progress-bar bg-gradient1 progress-animated" 
-															style={{width: "40%", height:"10px"}} role="progressbar"
+														<div className="progress-bar bg-gradient1 progress-animated"
+															style={{ width: "40%", height: "10px" }} role="progressbar"
 														>
 															<span className="sr-only">45% Complete</span>
 														</div>
@@ -240,14 +244,14 @@ const Home = () => {
 												</div>
 											</div>
 										</div>
-										
+
 										<div className="col-xl-6 col-sm-6">
 											<div className="card">
 												<div className="card-body d-flex px-4  justify-content-between">
 													<div>
 														<div className="">
 															<h2 className="fs-32 font-w700">562</h2>
-															<span className="fs-18 font-w500 d-block">Total Clients</span>
+															<span className="fs-18 font-w500 d-block">Revenue History</span>
 															<span className="d-block fs-16 font-w400">
 																<small className="text-danger">-2%</small> than last month
 															</span>
@@ -265,7 +269,7 @@ const Home = () => {
 													<div>
 														<div className="">
 															<h2 className="fs-32 font-w700">892</h2>
-															<span className="fs-18 font-w500 d-block">New Projects</span>
+															<span className="fs-18 font-w500 d-block">Sales Analytics</span>
 															<span className="d-block fs-16 font-w400"><small className="text-success">-2%</small> than last month</span>
 														</div>
 													</div>
@@ -277,7 +281,7 @@ const Home = () => {
 										</div>
 									</div>
 								</div>
-								<div className="col-xl-12">
+								{/* <div className="col-xl-12">
 									<div className="card">
 										<div className="card-body">
 											<div className="row">
@@ -512,15 +516,18 @@ const Home = () => {
 										</div>
 									</div>
 								
-								</div>
-							
-							</div>							
-						</div>							
-								
-					</div>	
-				</div>	
-			</div>	
-			
+								</div> */}
+
+							</div>
+						</div>
+						<div className="col-xl-12 col-lg-12">
+							<UserList/>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
 		</>
 	)
 }

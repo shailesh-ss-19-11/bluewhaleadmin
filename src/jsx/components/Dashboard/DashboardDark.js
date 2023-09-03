@@ -78,7 +78,7 @@ const DashboardDark = () => {
 								</div>
 								
 								
-								<div className="col-xl-12">
+								{/* <div className="col-xl-12">
 									<ProjectStatisticsTab />
 								</div>
 								<div className="col-xl-12">
@@ -193,11 +193,11 @@ const DashboardDark = () => {
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> */}
 								
 							</div>	
 						</div>	
-						<div className="col-xl-6">
+						{/* <div className="col-xl-6">
 							<div className="row">
 								<div className="col-xl-12">
 									<div className="row">
@@ -516,7 +516,7 @@ const DashboardDark = () => {
 								</div>
 							
 							</div>							
-						</div>							
+						</div>							 */}
 								
 					</div>	
 				</div>	
