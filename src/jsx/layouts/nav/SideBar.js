@@ -167,11 +167,11 @@ const SideBar = () => {
       "page-error-500",
       "page-error-503",
     ];
-    const active = {
-      padding: "6px",
-      fontWeight: "700",
-      color:"#7f7184"
-    }
+  const active = {
+    padding: "6px",
+    fontWeight: "700",
+    color: "#7f7184"
+  }
   return (
     <div
       className={`dlabnav ${iconHover} ${sidebarposition.value === "fixed" &&
@@ -190,35 +190,39 @@ const SideBar = () => {
           <li className="">
             <Link className="ai-icon" to="/dashboard" >
               <i className="fas fa-home"></i>
-              <span className="nav-text" style={window.location.href.includes("dashboard")?active:{}}>Dashboard</span>
+              <span className="nav-text" style={window.location.href.includes("dashboard") ? active : {}}>Dashboard</span>
+            </Link>
+            <Link className="ai-icon" to="/customers" >
+              <i className="fas fa-user"></i>
+              <span className="nav-text" style={window.location.href.includes("customers") ? active : {}}>Customers</span>
             </Link>
             <Link className="ai-icon" to="/projects" >
               <i className="fas fa-desktop"></i>
-              <span className="nav-text" style={window.location.href.includes("projects")?active:{}}>Projects</span>
+              <span className="nav-text" style={window.location.href.includes("projects") ? active : {}}>Projects</span>
             </Link>
             <Link className="ai-icon" to="/servers" >
               <i className="fas fa-server"></i>
-              <span className="nav-text" style={window.location.href.includes("servers")?active:{}}>Servers</span>
+              <span className="nav-text" style={window.location.href.includes("servers") ? active : {}}>Servers</span>
             </Link>
             <Link className="ai-icon" to="/billing" >
               <i className="fas fa-file-invoice"></i>
-              <span className="nav-text" style={window.location.href.includes("billing")?active:{}}>Billing</span>
+              <span className="nav-text" style={window.location.href.includes("billing") ? active : {}}>Billing</span>
             </Link>
             <Link className="ai-icon" to="/settings" >
               <i className="fas fa-cog"></i>
-              <span className="nav-text" style={window.location.href.includes("settings")?active:{}}>Settings</span>
+              <span className="nav-text" style={window.location.href.includes("settings") ? active : {}}>Settings</span>
             </Link>
             <Link className="ai-icon" to="/teams" >
               <i className="fas fa-users"></i>
-              <span className="nav-text" style={window.location.href.includes("teams")?active:{}}>Teams</span>
+              <span className="nav-text" style={window.location.href.includes("teams") ? active : {}}>Teams</span>
             </Link>
             <Link className="ai-icon" to="/ssh-keys" >
               <i className="fas fa-key"></i>
-              <span className="nav-text" style={window.location.href.includes("ssh-keys")?active:{}}>SSH Keys</span>
+              <span className="nav-text" style={window.location.href.includes("ssh-keys") ? active : {}}>SSH Keys</span>
             </Link>
             <Link className="ai-icon" to="/service-provider" >
               <i className="fas fa-business-time"></i>
-              <span className="nav-text" style={window.location.href.includes("service-provider")?active:{}}>Service Provider</span>
+              <span className="nav-text" style={window.location.href.includes("service-provider") ? active : {}}>Service Provider</span>
             </Link>
             {/* <ul >
               <li><Link className={`${path === "dashboard" ? "mm-active" : ""}`} to="/dashboard"> Dashboard Light</Link></li>

@@ -117,6 +117,10 @@ import Setting from "./layouts/Setting";
 import { ThemeContext } from "../context/ThemeContext";
 import ServiceProvider from "./components/serviceprovider/ServiceProvider";
 import Servers from "./components/servers/Servers";
+import MyCustomers from "./components/customers/MyCustomers";
+import CustomersServersList from "./components/customers/components/CustomersCloudsList";
+import CustomersCloudsList from "./components/customers/components/CustomersCloudsList";
+import ServersList from "./components/customers/components/ServersList";
 
 const Markup = () => {
   const { menuToggle } = useContext(ThemeContext);
@@ -226,7 +230,10 @@ const Markup = () => {
     { url: "page-error-503", component: Error503 },
     // app pages 
     {url:"service-provider",component:ServiceProvider},
-    {url:"servers",component:Servers}
+    {url:"servers",component:Servers},
+    {url:"customers",component:MyCustomers},
+    {url:"customers/cloudlist/:id",component:CustomersCloudsList},
+    {url:"customers/cloudlist/serverlist/:id",component:ServersList}
   ];
 
 

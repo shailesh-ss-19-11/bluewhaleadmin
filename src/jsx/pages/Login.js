@@ -67,9 +67,9 @@ function Login (props) {
 									<form onSubmit={onLogin}  className="form-validate">
 										<h3 className="text-center mb-4 text-black">Sign in your account</h3>
 										<div className="form-group mb-3">
-											<label className="mb-1"  htmlFor="val-email"><strong>Email</strong></label>
+											<label className="mb-1"  htmlFor="val-email"><strong>username</strong></label>
 											<div>
-												<input type="email" className="form-control"
+												<input type="text" className="form-control"
 													value={email}
 												   onChange={(e) => setEmail(e.target.value)}
 												   placeholder="Type Your Email Address"

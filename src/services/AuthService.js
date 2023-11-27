@@ -4,6 +4,7 @@ import {
     loginConfirmedAction,
     logout,
 } from '../store/actions/AuthActions';
+import { BACKENDURL } from '../AppVaribale';
 
 export function signUp(email, password) {
     //axios call
@@ -24,9 +25,13 @@ export function login(email, password) {
         password,
         returnSecureToken: true,
     };
+    // return axios.post(
+    //     `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD3RPAp3nuETDn9OQimqn_YF6zdzqWITII`,
+    //     postData,
+    // );
     return axios.post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD3RPAp3nuETDn9OQimqn_YF6zdzqWITII`,
-        postData,
+        `${BACKENDURL}api/User/Login?username=${email}&password=${password}`,
+        {},
     );
 }
 
@@ -38,11 +43,11 @@ export function formatError(errorResponse) {
             break;
         case 'EMAIL_NOT_FOUND':
             //return 'Email not found';
-           swal("Oops", "Email not found", "error",{ button: "Try Again!",});
-           break;
+            swal("Oops", "Email not found", "error", { button: "Try Again!", });
+            break;
         case 'INVALID_PASSWORD':
             //return 'Invalid Password';
-            swal("Oops", "Invalid Password", "error",{ button: "Try Again!",});
+            swal("Oops", "Invalid Password", "error", { button: "Try Again!", });
             break;
         case 'USER_DISABLED':
             return 'User Disabled';
